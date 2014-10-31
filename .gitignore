@@ -1,0 +1,6 @@
+target
+node
+node_modules
+src/main/resources/static/lib
+src/main/resources/static/css/all.min.css
+src/main/resources/static/js/test.all.min.js
