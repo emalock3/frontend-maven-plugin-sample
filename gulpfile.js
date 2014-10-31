@@ -4,11 +4,17 @@ var prettify = require('gulp-jsbeautifier');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglifyjs');
 var minifyCSS = require('gulp-minify-css');
+var bower = require('gulp-bower');
 
-gulp.task('default', ['test', 'format-js', 'compress-js', 'format-css', 'minify-css']);
+gulp.task('default', ['test', 'bower', 'format-js', 'compress-js', 'format-css', 'minify-css']);
 
 gulp.task('test', function(done) {
   console.log("test");
+});
+
+gulp.task('bower', function() {
+  return bower()
+    .pipe(gulp.dest('./src/main/resources/static/lib'));
 });
 
 gulp.task('format-js', function() {
